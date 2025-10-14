@@ -27,6 +27,23 @@
 
 <body>
 
+  <!-- Toast container -->
+<div id="toast" style="
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 9999;
+">Email copied!</div>
+
+
   <!--
     - #MAIN
   -->
@@ -72,7 +89,12 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:yashwnathchikkihd@gmail.com" class="contact-link">yashwnathchikkihd@gmail.com</a>
+              <a href="javascript:void(0);" 
+   class="contact-link" 
+   onclick="navigator.clipboard.writeText('yashwnathchikkihd@gmail.com'); showToast('Email copied!');">
+   yashwnathchikkihd@gmail.com
+</a>
+
             </div>
 
           </li>
@@ -86,7 +108,12 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+91-8618510937" class="contact-link">+91-8618510937</a>
+              <a href="javascript:void(0);" 
+   class="contact-link" 
+   onclick="navigator.clipboard.writeText('+91-8618510937'); showToast('Phone number copied!');">
+   +91-8618510937
+</a>
+
             </div>
 
           </li>
@@ -264,11 +291,10 @@
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Data Handling & Visualization</h4>
+                <h4 class="h4 service-item-title">Database Management & System Design</h4>
 
                 <p class="service-item-text">
-                  Managing and transforming data efficiently, and creating simple dashboards to turn insights into actionable information.
-                </p>
+                  Designing and managing relational and NoSQL databases, ensuring data integrity, scalability, and efficient query performance. Building backend systems and APIs that power robust, high-performance web applications</p>
               </div>
 
             </li>
@@ -453,37 +479,57 @@
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
+                <img src="./assets/images/atom.png" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
+                <img src="./assets/images/nodejs.png" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
+                <img src="./assets/images/python.png" alt="client logo">
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/java.png" alt="client logo">
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/Express_js is a Nodejs framework that is open and….jpeg" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
+                <img src="./assets/images/mysql.png" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
+                <img src="./assets/images/MongoDB Atlas Vector Search and Atlas Search Nodes Now Available For Next-Gen App Development.jpeg" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
+                <img src="./assets/images/docker.png" alt="client logo">
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/social.png" alt="client logo">
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/Tensorflow Logo Sticker.jpeg" alt="client logo">
               </a>
             </li>
 
@@ -691,243 +737,195 @@
 
 
       <!--
-        - #PORTFOLIO
-      -->
-
-      <article class="portfolio" data-page="portfolio">
-
-        <header>
-          <h2 class="h2 article-title">Portfolio</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
-          </div>
-
-          <ul class="project-list">
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/vendo.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/vendo.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/videtect.jpg" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">videtect</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/plant_disease.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/plant_disease.jpg" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">AgriVision</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
+      - #PORTFOLIO
+-->
+
+<article class="portfolio" data-page="portfolio">
+
+  <header>
+    <h2 class="h2 article-title">Portfolio</h2>
+  </header>
+
+  <section class="projects">
+
+    <ul class="filter-list">
+
+      <li class="filter-item">
+        <button class="active" data-filter-btn>All</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>Full-Stack Projects</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>Data Analytics & Predictive Models</button>
+      </li>
+
+      <li class="filter-item">
+        <button data-filter-btn>Applied ML & GenAI</button>
+      </li>
+
+    </ul>
+
+    <div class="filter-select-box">
+
+      <button class="filter-select" data-select>
+
+        <div class="select-value" data-selecct-value>Select category</div>
+
+        <div class="select-icon">
+          <ion-icon name="chevron-down"></ion-icon>
+        </div>
+
+      </button>
+
+      <ul class="select-list">
+
+        <li class="select-item">
+          <button data-select-item>All</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Full-Stack Projects</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Data Analytics & Predictive Models</button>
+        </li>
+
+        <li class="select-item">
+          <button data-select-item>Applied ML & GenAI</button>
+        </li>
+
+      </ul>
+
+    </div>
+
+    <ul class="project-list">
+
+      <li class="project-item active" data-filter-item data-category="Full-Stack Projects">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/vendo.jpg" alt="finance" loading="lazy">
+          </figure>
+          <h3 class="project-title">Finance</h3>
+          <p class="project-category">Full-Stack Projects</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="Full-Stack Projects">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/citizen.jpg" alt="orizon" loading="lazy">
+          </figure>
+          <h3 class="project-title">Citizen</h3>
+          <p class="project-category">Full-Stack Projects</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="Applied ML & GenAI">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/vendo.jpg" alt="fundo" loading="lazy">
+          </figure>
+          <h3 class="project-title">Fundo</h3>
+          <p class="project-category">Applied ML & GenAI</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="Data Analytics & Predictive Models">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/" alt="brawlhalla" loading="lazy">
+          </figure>
+          <h3 class="project-title">Brawlhalla</h3>
+          <p class="project-category">Data Analytics & Predictive Models</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="Applied ML & GenAI">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
+          </figure>
+          <h3 class="project-title">DSM.</h3>
+          <p class="project-category">Applied ML & GenAI</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="Applied ML & GenAI">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
+          </figure>
+          <h3 class="project-title">MetaSpark</h3>
+          <p class="project-category">Applied ML & GenAI</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="Full-Stack Projects">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/videtect.jpg" alt="summary" loading="lazy">
+          </figure>
+          <h3 class="project-title">Videtect</h3>
+          <p class="project-category">Full-Stack Projects</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="Data Analytics & Predictive Models">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/plant_disease.jpg" alt="task manager" loading="lazy">
+          </figure>
+          <h3 class="project-title">Task Manager</h3>
+          <p class="project-category">Data Analytics & Predictive Models</p>
+        </a>
+      </li>
+
+      <li class="project-item active" data-filter-item data-category="Full-Stack Projects">
+        <a href="#">
+          <figure class="project-img">
+            <div class="project-item-icon-box">
+              <ion-icon name="eye-outline"></ion-icon>
+            </div>
+            <img src="./assets/images/plant_disease.jpg" alt="arrival" loading="lazy">
+          </figure>
+          <h3 class="project-title">AgriVision</h3>
+          <p class="project-category">Full-Stack Projects</p>
+        </a>
+      </li>
+
+    </ul>
+
+  </section>
+
+</article>
 
 
       <!--

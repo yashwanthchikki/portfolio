@@ -53,6 +53,14 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 modalCloseBtn.addEventListener("click", testimonialsModalFunc);
 overlay.addEventListener("click", testimonialsModalFunc);
 
+function showToast(message) {
+  const toast = document.getElementById('toast');
+  toast.textContent = message;
+  toast.style.opacity = 1;
+  setTimeout(() => {
+    toast.style.opacity = 0;
+  }, 1500);
+}
 
 
 // custom select variables
@@ -79,38 +87,46 @@ for (let i = 0; i < selectItems.length; i++) {
 const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
+  selectedValue = selectedValue.toLowerCase();
 
   for (let i = 0; i < filterItems.length; i++) {
+    const itemCategory = filterItems[i].dataset.category.toLowerCase();
 
-    if (selectedValue === "all") {
-      filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
+    if (selectedValue === "all" || selectedValue === itemCategory) {
       filterItems[i].classList.add("active");
     } else {
       filterItems[i].classList.remove("active");
     }
-
   }
+};
 
-}
+
+
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
 
+// filter buttons
 for (let i = 0; i < filterBtn.length; i++) {
-
   filterBtn[i].addEventListener("click", function () {
-
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
+    let selectedValue = this.innerText; // keep original for display
+    selectValue.innerText = selectedValue; 
     filterFunc(selectedValue);
 
     lastClickedBtn.classList.remove("active");
     this.classList.add("active");
     lastClickedBtn = this;
-
   });
+}
 
+// select dropdown
+for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
+    let selectedValue = this.innerText; // original capitalization
+    selectValue.innerText = selectedValue;
+    elementToggleFunc(select);
+    filterFunc(selectedValue);
+  });
 }
 
 
