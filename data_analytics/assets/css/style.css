@@ -400,14 +400,21 @@ main {
 .contacts-list {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 0px;
 }
+
+
+.contact-item:first-child .contact-info {
+  max-width: calc(100% - 42px);
+  width: calc(100% - 42px);
+}
+
 
 .contact-item {
   min-width: 100%;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px;
 }
 
 .contact-info {

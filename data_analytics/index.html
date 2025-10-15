@@ -27,6 +27,23 @@
 
 <body>
 
+  <!-- Toast container -->
+<div id="toast" style="
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 9999;
+">Email copied!</div>
+
+
   <!--
     - #MAIN
   -->
@@ -72,7 +89,11 @@
             <div class="contact-info">
               <p class="contact-title">Email</p>
 
-              <a href="mailto:yashwnathchikkihd@gmail.com" class="contact-link">yashwnathchikkihd@gmail.com</a>
+               <a href="javascript:void(0);" 
+   class="contact-link" 
+   onclick="navigator.clipboard.writeText('yashwnathchikkihd@gmail.com'); showToast('Email copied!');">
+   yashwnathchikkihd@gmail.com
+</a>
             </div>
 
           </li>
@@ -86,7 +107,11 @@
             <div class="contact-info">
               <p class="contact-title">Phone</p>
 
-              <a href="tel:+91-8618510937" class="contact-link">+91-8618510937</a>
+              <a href="javascript:void(0);" 
+   class="contact-link" 
+   onclick="navigator.clipboard.writeText('+91-8618510937'); showToast('Phone number copied!');">
+   +91-8618510937
+</a>
             </div>
 
           </li>
@@ -443,7 +468,7 @@
 
         <section class="clients">
 
-          <h3 class="h3 clients-title">Clients</h3>
+          <h3 class="h3 clients-title">Tools</h3>
 
           <ul class="clients-list has-scrollbar">
 
@@ -452,10 +477,29 @@
                 <img src="./assets/images/python.png" alt="client logo">
               </a>
             </li>
-
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/scikit-learn.jpeg" alt="client logo">
+                <img src="./assets/images/mysql.jpeg" alt="client logo">
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/powebi.jpeg" alt="client logo">
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/Git.jpeg" alt="client logo">
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/tableau.jpeg" alt="client logo">
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/snowflake.jpeg" alt="client logo">
               </a>
             </li>
 
@@ -464,44 +508,20 @@
                 <img src="./assets/images/tensorflow.jpeg" alt="client logo">
               </a>
             </li>
-
             <li class="clients-item">
               <a href="#">
-                <img src="./assets/images/pandas.jpeg" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/mysql.jpeg" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/snowflake.jpeg" alt="client logo">
-              </a>
-            </li>
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/powebi.jpeg" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/tableau.jpeg" alt="client logo">
-              </a>
-            </li>
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/Git.jpeg" alt="client logo">
+                <img src="./assets/images/scikit-learn.jpeg" alt="client logo">
               </a>
             </li>
 
             <li class="clients-item">
               <a href="#">
                 <img src="./assets/images/Project Jupyter.jpeg" alt="client logo">
+              </a>
+            </li>
+            <li class="clients-item">
+              <a href="#">
+                <img src="./assets/images/pandas.jpeg" alt="client logo">
               </a>
             </li>
 
