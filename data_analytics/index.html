@@ -953,33 +953,40 @@
         </header>
 
         <section class="mapbox" data-mapbox>
-          <figure>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
-          </figure>
-        </section>
+  <figure>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d331924.98754456674!2d77.47520518489775!3d12.98593678284456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1760600432072!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+  
+
+      width="400"
+      height="300"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </figure>
+</section>
+
 
         <section class="contact-form">
 
           <h3 class="h3 form-title">Contact Form</h3>
+<form action="https://api.web3forms.com/submit" method="POST" class="form">
+  <input type="hidden" name="access_key" value="f6aea848-9000-49c5-9b12-52a790d97317">
 
-          <form action="#" class="form" data-form>
+  <div class="input-wrapper">
+    <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+    <input type="email" name="email" class="form-input" placeholder="Email address" required>
+  </div>
 
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+  <input type="text" name="designation" class="form-input" placeholder="Your Designation / Role">
 
-              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
-            </div>
+  <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
 
-            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+  <button class="form-btn" type="submit">
+    <ion-icon name="paper-plane"></ion-icon>
+    <span>Send Message</span>
+  </button>
+</form>
 
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
 
         </section>
 
