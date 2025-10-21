@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Redirect</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 20vh;
+      color: #333;
+    }
+    h1, h2 {
+      color: #0056b3;
+    }
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h2>Redirecting to live application...</h2>
+  <p id="status">Please wait...</p>
+
+  <script>
+    // ===== CONFIG =====
+    const liveAppURL = "https://www.google.com/"; // change this to your current live URL
+    const underMaintenance = false; // set true if the server is under maintenance
+    // ==================
+
+    if (underMaintenance) {
+      document.body.innerHTML = `
+        <h1>🚧 Server Under Maintenance</h1>
+        <p>The live application is currently unavailable.</p>
+      `;
+    } else {
+      // Redirect after a brief pause
+      setTimeout(() => {
+        window.location.href = liveAppURL;
+      }, 500); // optional delay for UX
+    }
+  </script>
+</body>
+</html>
