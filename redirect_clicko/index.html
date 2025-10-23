@@ -1,49 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project Redirect</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting...</title>
+  <link rel="stylesheet" href="../style.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 20vh;
+      margin: 10vh auto;
       color: #333;
+      max-width: 750px;
     }
-    h1, h2 {
+
+    h1 {
       color: #0056b3;
     }
-    a {
-      color: #0066cc;
-      text-decoration: none;
+
+    table {
+      border-collapse: collapse;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 600px;
     }
-    a:hover {
-      text-decoration: underline;
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      color: #0056b3;
+    }
+
+    .completed {
+      color: green;
+      font-weight: 600;
+    }
+
+    .pending {
+      color: red;
+      font-weight: 600;
+    }
+
+    .countdown {
+      font-size: 18px;
+      margin-top: 1em;
+    }
+
+    button {
+      background: #0056b3;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #003d80;
+    }
+
+    .footer {
+      margin-top: 2em;
+      font-size: 14px;
+      color: #555;
     }
   </style>
 </head>
+
 <body>
-  <h2>Redirecting to live application...</h2>
-  <p id="status">Please wait...</p>
+  <h1><strong>CLICKO</strong></h1>
+  <h2>Redirecting to Live Application</h2>
+
+  <div class="countdown">Redirecting in <span id="counter">10</span> seconds...</div>
+  <button id="hold-btn">⏸️ Hold Redirect</button>
+
+  <h2>🧱 Project Progress</h2>
+  <table id="feature-table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="footer">
+    <p>You’ll be automatically redirected once the timer ends.</p>
+  </div>
 
   <script>
-    // ===== CONFIG =====
-    const liveAppURL = "https://www.google.com/"; // change this to your current live URL
-    const underMaintenance = true; // set true if the server is under maintenance
-    // ==================
+    /*******************************
+     * 🔧 CONFIG SECTION (EDIT THESE)
+     *******************************/
+    const liveAppURL = "https://your-live-app-url.com"; // ← Change this per project
 
-    if (underMaintenance) {
-      document.body.innerHTML = `
-        <h1>🚧 Server Under Maintenance</h1>
-        <p>The live application is currently unavailable.</p>
+    // Add your features here — if not completed, give date as a string
+    const features = [
+      { name: "User Authentication", status: "Completed" },
+      { name: "Dashboard UI", status: "Completed" },
+      { name: "Payment Gateway", status: "Dec 5, 2025" },
+      { name: "Notifications", status: "Dec 12, 2025" },
+      { name: "Analytics Dashboard", status: "Dec 20, 2025" }
+    ];
+
+    /*******************************
+     * ⚙️ LOGIC SECTION (DON’T EDIT)
+     *******************************/
+    const tbody = document.querySelector("#feature-table tbody");
+    features.forEach(f => {
+      const tr = document.createElement("tr");
+      const statusClass = f.status === "Completed" ? "completed" : "pending";
+      tr.innerHTML = `
+        <td>${f.name}</td>
+        <td class="${statusClass}">${f.status}</td>
       `;
-    } else {
-      // Redirect after a brief pause
-      setTimeout(() => {
-        window.location.href = liveAppURL;
-      }, 500); // optional delay for UX
-    }
+      tbody.appendChild(tr);
+    });
+
+    // Countdown + redirect + hold
+    let counter = 10;
+    let hold = false;
+    const counterEl = document.getElementById("counter");
+    const holdBtn = document.getElementById("hold-btn");
+
+    holdBtn.addEventListener("click", () => {
+      hold = !hold;
+      holdBtn.textContent = hold ? "▶️ Resume Redirect" : "⏸️ Hold Redirect";
+    });
+
+    const countdown = setInterval(() => {
+      if (!hold) {
+        counter--;
+        counterEl.textContent = counter;
+        if (counter === 0) {
+          clearInterval(countdown);
+          window.location.href = liveAppURL;
+        }
+      }
+    }, 1000);
   </script>
 </body>
 </html>
