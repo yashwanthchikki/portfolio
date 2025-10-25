@@ -3,145 +3,358 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting...</title>
-  <link rel="stylesheet" href="../style.css" />
+  <title>CLICKO - Project Overview</title>
+  <meta name="robots" content="noindex, nofollow">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 10vh auto;
-      color: #333;
-      max-width: 750px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: #fafafa;
+      color: #1a1a1a;
+      line-height: 1.6;
+      padding: 40px 20px;
     }
-
-    h1 {
-      color: #0056b3;
+    
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 2px;
+      padding: 50px 40px;
     }
-
-    table {
-      border-collapse: collapse;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 600px;
+    
+    .header {
+      border-bottom: 1px solid #e0e0e0;
+      padding-bottom: 30px;
+      margin-bottom: 30px;
     }
-
-    th, td {
-      border: 1px solid #ccc;
-      padding: 10px 14px;
-      text-align: left;
+    
+    .project-title {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a1a1a;
+      letter-spacing: 1px;
+      margin-bottom: 8px;
     }
-
-    th {
-      background-color: #f2f2f2;
-      color: #0056b3;
+    
+    .subtitle {
+      font-size: 16px;
+      color: #666;
+      font-weight: 400;
     }
-
-    .completed {
-      color: green;
-      font-weight: 600;
+    
+    .links-section {
+      margin-bottom: 40px;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
     }
-
-    .pending {
-      color: red;
-      font-weight: 600;
-    }
-
-    .countdown {
-      font-size: 18px;
-      margin-top: 1em;
-    }
-
-    button {
-      background: #0056b3;
-      color: white;
-      border: none;
-      padding: 8px 16px;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background: #003d80;
-    }
-
-    .footer {
-      margin-top: 2em;
+    
+    .link-btn {
+      padding: 10px 20px;
+      border: 1px solid #1a1a1a;
+      background: white;
+      color: #1a1a1a;
+      text-decoration: none;
       font-size: 14px;
-      color: #555;
+      font-weight: 500;
+      border-radius: 2px;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+    
+    .link-btn:hover {
+      background: #1a1a1a;
+      color: white;
+    }
+    
+    .link-btn.primary {
+      background: #1a1a1a;
+      color: white;
+    }
+    
+    .link-btn.primary:hover {
+      background: #333;
+    }
+    
+    .redirect-info {
+      background: #f5f5f5;
+      border-left: 3px solid #1a1a1a;
+      padding: 15px 20px;
+      margin-bottom: 40px;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .redirect-info strong {
+      color: #1a1a1a;
+    }
+    
+    .countdown-section {
+      text-align: center;
+      margin-bottom: 40px;
+      padding: 20px;
+      border: 1px solid #e0e0e0;
+      background: #fafafa;
+    }
+    
+    .countdown {
+      font-size: 48px;
+      font-weight: 300;
+      color: #1a1a1a;
+      font-variant-numeric: tabular-nums;
+      margin: 10px 0;
+    }
+    
+    .countdown-label {
+      font-size: 12px;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .control-btn {
+      margin-top: 15px;
+      padding: 8px 16px;
+      border: 1px solid #999;
+      background: white;
+      color: #666;
+      font-size: 13px;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: all 0.2s;
+    }
+    
+    .control-btn:hover {
+      border-color: #1a1a1a;
+      color: #1a1a1a;
+    }
+    
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-size: 14px;
+    }
+    
+    .progress-info {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .progress-bar-container {
+      background: #e0e0e0;
+      height: 4px;
+      margin-bottom: 30px;
+    }
+    
+    .progress-bar {
+      height: 100%;
+      background: #1a1a1a;
+      transition: width 0.5s ease;
+    }
+    
+    .feature-list {
+      list-style: none;
+    }
+    
+    .feature-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .feature-item:last-child {
+      border-bottom: none;
+    }
+    
+    .feature-name {
+      font-size: 15px;
+      color: #1a1a1a;
+    }
+    
+    .status {
+      font-size: 13px;
+      font-weight: 500;
+    }
+    
+    .status.completed {
+      color: #2d7a2d;
+    }
+    
+    .status.pending {
+      color: #c73e3e;
+    }
+    
+    .footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        padding: 30px 20px;
+      }
+      
+      .links-section {
+        flex-direction: column;
+      }
+      
+      .link-btn {
+        text-align: center;
+      }
     }
   </style>
 </head>
-
 <body>
-  <h1><strong>CLICKO</strong></h1>
-  <h2>Redirecting to Live Application</h2>
+  <div class="container">
+    <div class="header">
+      <h1 class="project-title">CLICKO</h1>
+      <p class="subtitle">URL Shortener with Advanced Tracking & Analytics</p>
+    </div>
 
-  <div class="countdown">Redirecting in <span id="counter">10</span> seconds...</div>
-  <button id="hold-btn">⏸️ Hold Redirect</button>
+    <div class="links-section" id="links-section">
+      <!-- Links will be dynamically inserted here -->
+    </div>
 
-  <h2>🧱 Project Progress</h2>
-  <table id="feature-table">
-    <thead>
-      <tr>
-        <th>Feature</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+    <div class="redirect-info">
+      <strong>Auto-redirect enabled:</strong> You will be redirected in <span id="redirect-timer">10</span> seconds. 
+      <span id="redirect-destination"></span>
+    </div>
 
-  <div class="footer">
-    <p>You’ll be automatically redirected once the timer ends.</p>
+    <div class="countdown-section">
+      <div class="countdown-label">REDIRECTING IN</div>
+      <div class="countdown" id="counter">10</div>
+      <button class="control-btn" id="pause-btn">Pause</button>
+    </div>
+
+    <div class="status-section">
+      <h2 class="section-title">Development Status</h2>
+      
+      <div class="progress-info">
+        <span>Progress</span>
+        <span><strong id="progress-percentage"></strong></span>
+      </div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <ul class="feature-list" id="feature-list"></ul>
+    </div>
+
+    <div class="footer">
+      Last updated: October 2024
+    </div>
   </div>
 
   <script>
     /*******************************
      * 🔧 CONFIG SECTION (EDIT THESE)
      *******************************/
-    const liveAppURL = "https://your-live-app-url.com"; // ← Change this per project
+    const config = {
+      liveAppURL: "https://clicko-production.up.railway.app/",
+      githubURL: "https://github.com/yashwantchikki/clicko",
+      projectName: "CLICKO"
+    };
 
-    // Add your features here — if not completed, give date as a string
     const features = [
-      { name: "User Authentication", status: "Completed" },
-      { name: "Dashboard UI", status: "Completed" },
-      { name: "Payment Gateway", status: "Dec 5, 2025" },
-      { name: "Notifications", status: "Dec 12, 2025" },
-      { name: "Analytics Dashboard", status: "Dec 20, 2025" }
+      { name: "Authentication System", status: "Completed" },
+      { name: "URL Shortening & Management", status: "Completed" },
+      { name: "Redirect Logic", status: "Completed" },
+      { name: "Geolocation Tracking", status: "Completed" },
+      { name: "TTL & Rate Limiting", status: "Completed" },
+      { name: "Analytics Backend", status: "Completed" },
+      { name: "Analytics Dashboard Visualization", status: "Pending" },
+      { name: "Malicious URL Detection & Blocking", status: "Pending" }
     ];
 
     /*******************************
-     * ⚙️ LOGIC SECTION (DON’T EDIT)
+     * ⚙️ LOGIC SECTION
      *******************************/
-    const tbody = document.querySelector("#feature-table tbody");
-    features.forEach(f => {
-      const tr = document.createElement("tr");
-      const statusClass = f.status === "Completed" ? "completed" : "pending";
-      tr.innerHTML = `
-        <td>${f.name}</td>
-        <td class="${statusClass}">${f.status}</td>
+    
+    // Determine redirect destination
+    const redirectURL = config.liveAppURL || config.githubURL;
+    const isLive = config.liveAppURL !== null;
+
+    // Update redirect destination text
+    document.getElementById('redirect-destination').textContent = isLive 
+      ? 'Destination: Live Application' 
+      : 'Destination: GitHub Repository';
+
+    // Build links section
+    const linksSection = document.getElementById('links-section');
+    let linksHTML = '';
+
+    if (isLive) {
+      linksHTML += `<a href="${config.liveAppURL}" class="link-btn primary">Visit Live Application →</a>`;
+    }
+    linksHTML += `<a href="${config.githubURL}" class="link-btn">View Source Code</a>`;
+    linksHTML += `<button class="link-btn" onclick="window.location.href='${redirectURL}'">Skip Redirect</button>`;
+
+    linksSection.innerHTML = linksHTML;
+
+    // Calculate progress
+    const completedCount = features.filter(f => f.status === "Completed").length;
+    const totalCount = features.length;
+    const progressPercentage = Math.round((completedCount / totalCount) * 100);
+    
+    document.getElementById('progress-percentage').textContent = `${completedCount}/${totalCount} Complete (${progressPercentage}%)`;
+    document.getElementById('progress-bar').style.width = progressPercentage + '%';
+
+    // Render features
+    const featureList = document.getElementById('feature-list');
+    features.forEach(feature => {
+      const li = document.createElement('li');
+      li.className = 'feature-item';
+      const statusClass = feature.status === "Completed" ? "completed" : "pending";
+      const statusText = feature.status === "Completed" ? "✓ Completed" : "Pending";
+      
+      li.innerHTML = `
+        <span class="feature-name">${feature.name}</span>
+        <span class="status ${statusClass}">${statusText}</span>
       `;
-      tbody.appendChild(tr);
+      featureList.appendChild(li);
     });
 
-    // Countdown + redirect + hold
+    // Countdown timer
     let counter = 10;
-    let hold = false;
-    const counterEl = document.getElementById("counter");
-    const holdBtn = document.getElementById("hold-btn");
+    let isPaused = false;
+    const counterEl = document.getElementById('counter');
+    const timerEl = document.getElementById('redirect-timer');
+    const pauseBtn = document.getElementById('pause-btn');
 
-    holdBtn.addEventListener("click", () => {
-      hold = !hold;
-      holdBtn.textContent = hold ? "▶️ Resume Redirect" : "⏸️ Hold Redirect";
+    pauseBtn.addEventListener('click', () => {
+      isPaused = !isPaused;
+      pauseBtn.textContent = isPaused ? 'Resume' : 'Pause';
     });
 
     const countdown = setInterval(() => {
-      if (!hold) {
+      if (!isPaused) {
         counter--;
         counterEl.textContent = counter;
+        timerEl.textContent = counter;
+        
         if (counter === 0) {
           clearInterval(countdown);
-          window.location.href = liveAppURL;
+          window.location.href = redirectURL;
         }
       }
     }, 1000);
