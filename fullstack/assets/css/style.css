@@ -494,6 +494,9 @@ main {
 
 .navbar-link.active { color: var(--orange-yellow-crayola); }
 
+.testimonials {
+  display: none;
+}
 
 
 
