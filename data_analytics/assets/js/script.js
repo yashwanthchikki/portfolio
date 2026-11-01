@@ -151,3 +151,39 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+
+// contact form (Web3Forms): send without leaving the page and show the result
+const contactForm = document.querySelector(".contact-form form");
+if (contactForm) {
+  const statusEl = document.createElement("p");
+  statusEl.className = "form-status";
+  statusEl.setAttribute("role", "status");
+  contactForm.appendChild(statusEl);
+
+  contactForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const btn = contactForm.querySelector("button[type=submit]");
+    btn.disabled = true;
+    statusEl.dataset.state = "";
+    statusEl.textContent = "Sending…";
+    try {
+      const res = await fetch(contactForm.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: new FormData(contactForm)
+      });
+      const data = await res.json().catch(function () { return {}; });
+      if (!res.ok || !data.success) throw new Error(data.message || ("error " + res.status));
+      statusEl.dataset.state = "ok";
+      statusEl.textContent = "Thanks! Your message has been sent. I'll get back to you soon.";
+      contactForm.reset();
+    } catch (err) {
+      statusEl.dataset.state = "error";
+      statusEl.innerHTML = "Sorry, the message couldn't be sent (" + err.message +
+        "). Please email me at <a href=\"mailto:yashwanthchikkihd@gmail.com\">yashwanthchikkihd@gmail.com</a>.";
+    } finally {
+      btn.disabled = false;
+    }
+  });
+}

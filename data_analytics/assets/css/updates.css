@@ -153,3 +153,11 @@
 /* keep every project cover the same shape so the grid lines up */
 .project-img,
 .project-item .project-img { height: auto; aspect-ratio: 16 / 10; }
+
+
+/* contact form status message */
+.form-status { margin-top: 15px; font-size: var(--fs-6, 14px); color: var(--light-gray, #d6d6d6); }
+.form-status[data-state="ok"] { color: #6fcf97; }
+.form-status[data-state="error"] { color: #ff8a80; }
+.form-status a { color: var(--orange-yellow-crayola, #ffdb70); text-decoration: underline; }
+.contact-intro a, .form-status a { display: inline; }
