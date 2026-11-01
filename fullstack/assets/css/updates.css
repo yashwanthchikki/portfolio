@@ -1,0 +1,155 @@
+
+
+/*-----------------------------------*\
+  #2026 UPDATE – additions
+\*-----------------------------------*/
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--onyx);
+  color: var(--white-2);
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.contact-text {
+  color: var(--white-2);
+  font-size: var(--fs-7);
+}
+
+.about-text strong,
+.contact-intro strong { color: var(--white-2); font-weight: var(--fw-500); }
+
+/* resume header + download button */
+.resume-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.resume-header .article-title { margin-bottom: 0; }
+
+.resume-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  color: var(--orange-yellow-crayola);
+  border: 1px solid var(--orange-yellow-crayola);
+  border-radius: 25px;
+  transition: var(--transition-1);
+}
+
+.resume-download:hover,
+.resume-download:focus {
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+}
+
+/* experience details */
+.timeline-sub {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.timeline-bullets {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+.timeline-bullets li {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+/* skills as tag groups instead of percentage bars */
+.skill-group:not(:last-child) { margin-bottom: 18px; }
+
+.skill-group .h5 {
+  color: var(--white-2);
+  margin-bottom: 8px;
+}
+
+.skill-tag {
+  display: inline-block;
+  margin: 0 6px 6px 0;
+  padding: 4px 10px;
+  font-size: var(--fs-8);
+  color: var(--light-gray);
+  background: var(--onyx);
+  border: 1px solid var(--jet);
+  border-radius: 6px;
+}
+
+/* project cards */
+.project-item > a { display: block; }
+
+.project-desc {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-300);
+  line-height: 1.5;
+  margin: 8px 10px 6px;
+}
+
+.project-links {
+  margin: 0 10px;
+  font-size: var(--fs-7);
+}
+
+.project-links a {
+  color: var(--orange-yellow-crayola);
+  margin-right: 12px;
+}
+
+.project-links a:hover { text-decoration: underline; }
+
+.project-note {
+  color: var(--light-gray-70);
+  font-style: italic;
+}
+
+/* contact intro */
+.contact-intro {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.contact-intro a { color: var(--orange-yellow-crayola); }
+
+.project-title { text-transform: none; }
+
+.resume-actions { margin: -10px 0 30px; }
+
+.timeline-bullets li { list-style: disc; }
+
+.timeline-item-title { text-transform: none; }
+
+.info-content .name { white-space: normal; }
+
+@media (min-width: 1250px) {
+  .info-content .name { font-size: 20px; white-space: nowrap; }
+}
+
+/* keep every project cover the same shape so the grid lines up */
+.project-img,
+.project-item .project-img { height: auto; aspect-ratio: 16 / 10; }
